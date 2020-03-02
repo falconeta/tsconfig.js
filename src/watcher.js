@@ -13,14 +13,14 @@ const {
 } = require('./events')
 
 
-module.exports = function watch({ root = '.', ignore = [] }, watchDependencies = false) {
+module.exports = function watch({ root = '.', ignore = [], tsconfigName= 'tsconfig.js' }, watchDependencies = false) {
 	if (!Array.isArray(ignore)) {
 		ignore = [ignore]
 	}
 
 	const external = new EventEmitter()
 
-	const buildWatcher = chokidar.watch(`${resolvePath(root).replace(/\\/g, '/')}/**/tsconfig.js`, {
+	const buildWatcher = chokidar.watch(`${resolvePath(root).replace(/\\/g, '/')}/**/${tsconfigName}`, {
 		ignoreInitial: false,
 		ignored: [
 			'**/.git',
