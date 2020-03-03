@@ -1,6 +1,6 @@
 {
-  "name": "dynamic-tsconfig",
-  "version": "1.0.0",
+  "name": "tsconfig.js",
+  "version": "1.1.1",
   "description": "Polyfill for tsconfig.js, because TypeScript does not natively support JS config files",
   "main": "index.js",
   "bin": "cli.js",
